@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { ecomcontext } from "../App";
 
+
 function CartQty(props) {
   const { cart, setCart, handleRemoveFromCart } = useContext(ecomcontext);
 
@@ -44,13 +45,7 @@ function CartQty(props) {
       <div className="left">
         <button onClick={increment}>+</button>
         {displayedProduct.quantity ? <p>{displayedProduct.quantity}</p> : ""}
-        <button
-          onClick={() => {
-            displayedProduct.quantity > 1 ? decrement() : "";
-          }}
-        >
-          -
-        </button>
+        <button onClick={() => {displayedProduct.quantity > 1 ? decrement() : "";}}>-</button>
       </div>
       <div className="right">
         <MdDelete onClick={() => handleRemoveFromCart(props.product)} />
