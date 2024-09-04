@@ -8,6 +8,9 @@ import Footer from "./pages/Footer.jsx";
 import Blog from "./Blogg/Blog.jsx";
 import Singleblog from "./Blogg/Singleblog.jsx";
 import Contact from "./pages/Contact.jsx";
+import SignUp from "./componets/SignUp.jsx";
+import Login from "./componets/Login.jsx"
+
 
 export const ecomcontext = createContext({});
 
@@ -39,17 +42,6 @@ function App() {
     });
   }
 
-  // useEffect(() => {
-  //   if (cart) {
-  //     console.log("cart>>>>>>>>>>>>>>>>>>>>>", cart);
-  //     cart.filter((val) => {
-  //       if (val.id == productId) {
-  //         val.quantity += 1
-  //       }
-  //     });
-  //   }
-  // }, [cart]);
-
   return (
     <>
       <BrowserRouter>
@@ -64,7 +56,9 @@ function App() {
         >
           <Header />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<Login />}></Route>
+            <Route path="/SignUp" element={<SignUp />}></Route>
+            <Route path="/Home" element={<Home />}></Route>
             <Route path="/Blog" element={<Blog />}></Route>
             <Route path="/Contact" element={<Contact />}></Route>
             <Route path="/blog/:id" element={<Singleblog />}></Route>

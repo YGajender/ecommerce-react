@@ -31,7 +31,7 @@ function CartQty(props) {
   useEffect(() => {
     if (cart.length > 0) {
       const productToDisplay = cart.find((item) => {
-        console.log(item);
+        console.log(item,);
         console.log(props.product);
         return item.id === props.product.id;
       });
